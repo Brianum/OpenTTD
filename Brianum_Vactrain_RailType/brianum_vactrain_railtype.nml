@@ -1,0 +1,273 @@
+grf {
+	grfid: "BS03";
+	name: string(STR_GRF_NAME);
+	desc: string(STR_GRF_DESCRIPTION);
+	version: 4;
+	min_compatible_version: 4;
+
+	param {
+		param_build_rail_cost_mult {
+			type: int;
+			name: string(STR_PARAM1_NAME);
+			desc: string(STR_PARAM1_DESC);
+			min_value: 0;
+			max_value: 18;
+			def_value: 0;
+			names: {
+				0: string(STR_PARAM_COST_AUTO);
+				1: string(STR_PARAM_COST_BY256);
+				2: string(STR_PARAM_COST_BY128);
+				3: string(STR_PARAM_COST_BY64);
+				4: string(STR_PARAM_COST_BY32);
+				5: string(STR_PARAM_COST_BY16);
+				6: string(STR_PARAM_COST_BY8);
+				7: string(STR_PARAM_COST_BY4);
+				8: string(STR_PARAM_COST_BY2);
+				9: string(STR_PARAM_COST_NORMAL);
+				10: string(STR_PARAM_COST_TIMES2);
+				11: string(STR_PARAM_COST_TIMES4);
+				12: string(STR_PARAM_COST_TIMES8);
+				13: string(STR_PARAM_COST_TIMES16);
+				14: string(STR_PARAM_COST_TIMES32);
+				15: string(STR_PARAM_COST_TIMES64);
+				16: string(STR_PARAM_COST_TIMES128);
+				17: string(STR_PARAM_COST_TIMES256);
+				18: string(STR_PARAM_COST_TIMES512);
+			};
+		}
+	}
+}
+
+/*
+ * ********************************************
+ * Parameter 1: Build/Clear rail Costs
+ * 0: Automatic (default)
+ * 1: 1/256
+ * 2: 1/128
+ * ...
+ * 9: 1
+ * ...
+ * 18: 256x
+ * in NML a value of 0 means: don't change the base costs
+ * ********************************************
+ */
+
+RAIL_COST_MOD = (param_build_rail_cost_mult == 0) ? 0 : param_build_rail_cost_mult - 9;
+
+param[30] = RAIL_COST_MOD;
+
+basecost {
+	PR_BUILD_RAIL: param[30];
+	PR_CLEAR_RAIL: param[30];
+}
+
+railtypetable {
+	VACT
+}
+
+//[left_x, upper_y, width, height, offset_x, offset_y]
+spriteset(gui_sprites_big, "gfx/gui_big.png") {
+	[0,0,30,30,0,0]
+	[32,0,30,30,0,0]
+	[64,0,30,30,0,0]
+	[96,0,30,30,0,0]
+	[128,0,30,30,0,0]
+	[160,0,30,30,0,0]
+	[192,0,30,30,0,0]
+	[224,0,30,30,0,0]
+	[0,32,32,32,0,0]
+	[32,32,32,32,0,0]
+	[64,32,32,32,0,0]
+	[96,32,32,32,0,0]
+	[128,32,32,32,0,0]
+	[160,32,32,32,0,0]
+	[192,32,32,32,0,0]
+	[224,32,32,32,0,0]
+}
+
+spriteset(pylons_group_top, "gfx/elrailswvac.png") {
+	[530,136, 10,17, -7,-14]
+	[546,136, 10,19, 0, -17]
+	[562,136, 10,17, 0, -14]
+	[578,136, 10,19, -7, -17]
+	[594,136, 4,16, 0,-15]
+	[610,136, 4,22, 0, -16]
+	[626,136, 8,16, 0, -15]
+	[642,136, 8,16, -7, -15]
+}
+
+spriteset(wire_group_top, "gfx/elrailswvac.png") {
+	[66, 8, 64,39, -47, -8]
+	[146, 8, 64,39, -15, -8]
+	[226, 8, 64,39, -15, -8]
+	[306, 8, 64,39, -47, -8]
+	[386, 8, 64,34, -46, -4]
+	[466, 8, 64,39, -17, 1]
+	[546, 8, 64,39, -47, -2]
+	[626, 8, 64,34, -18, -4]
+	[706, 8, 64,39, -47, -8]
+	[2, 72, 64,39, -15, -8]
+	[82, 72, 64,39, -15, -8]
+	[162, 72, 64,39, -47, -8]
+	[386, 8, 64,34, -46, -4]
+	[466, 8, 64,39, -17, 1]
+	[546, 8, 64,39, -47, -2]
+	[626, 8, 64,34, -18, -4]
+	[562, 72, 64,39, -47, -8]
+	[642, 72, 64,39, -15, -8]
+	[722, 72, 64,39, -15, -8]
+	[2, 136, 64,39, -47, -8]
+	[386, 8, 64,34, -46, -4]
+	[466, 8, 64,39, -17, 1]
+	[546, 8, 64,39, -47, -2]
+	[626, 8, 64,34, -18, -4]
+	[82, 136, 64,39, -47, -8]
+	[162, 136, 64,39, -17, -8]
+	[242, 136, 64,39, -47, -8]
+	[322, 136, 64,39, -15, -8]
+}
+
+// railtype underlays
+template tmpl_underlay_straight() {
+	[ 75, 0, 64,31, -31, 0]
+	[ 0, 0, 64,31, -31, 0]
+}
+template tmpl_underlay_slope() {
+	[ 75, 40, 64,39, -31, -8]
+	[150, 40, 64,23, -31, 0]
+	[225, 40, 64,23, -31, 0]
+	[300, 40, 64,39, -30, -9]
+}
+template tmpl_underlay_diagonal() {
+	[150, 0, 64,31, -31, 0]
+	[225, 0, 64,31, -31, 0]
+	[ 0, 40, 64,31, -31, 0]
+	[300, 0, 64,31, -31, 0]
+}
+
+template tmpl_underlay_railtypes() {
+	tmpl_underlay_straight()
+	tmpl_underlay_diagonal()
+	tmpl_underlay_slope()
+
+	// x - crossing
+	[ 0,120, 64,31, -31, 0]
+
+	// underlay for crossings w/o tracks
+	[ 0, 80, 64,31, -31, 0]
+	[225, 80, 64,31, -31, 0]
+	[150, 80, 64,31, -31, 0]
+	[ 75, 80, 64,31, -31, 0]
+	[300, 80, 64,31, -31, 0]
+}
+template tmpl_overlay_straight() {
+	[ 0,155, 40,21, -19, 5]
+	[ 50,155, 40,21, -19, 5]
+}
+template tmpl_overlay_slopes() {
+	[ 0,195, 64,39, -33, -8]
+	[ 75,195, 64,23, -31, 0]
+	[150,195, 64,23, -31, 0]
+	[225,195, 64,39, -32, -9]
+}
+template tmpl_overlay_diagonal() {
+	[100,155, 40, 7, -19, 4]
+	[150,155, 40, 7, -21, 20]
+	[200,155, 12,19, 11, 6]
+	[250,155, 12,19, -21, 6]
+}
+
+template tmpl_tunnel_tracks() {
+	[ 75, 0, 64,31, -31, 0]
+	[ 0, 0, 64,31, -31, 0]
+	[ 75, 50, 64,31, -31, 0]
+	[ 0, 50, 64,31, -31, 0]
+}
+
+// railtype overlays
+template tmpl_overlay_railtypes() {
+	tmpl_overlay_straight()
+	tmpl_overlay_diagonal()
+	tmpl_overlay_slopes()
+}
+
+// bridge surface overlays
+template tmpl_bridges_overlay() {
+	tmpl_overlay_straight()
+	tmpl_overlay_slopes()
+	tmpl_overlay_diagonal()
+}
+
+template tmpl_bridges_underlay() {
+	tmpl_underlay_straight()
+	tmpl_underlay_slope()
+	tmpl_underlay_diagonal()
+}
+
+//gfxets for tracks
+spriteset(track_underlay_group, "gfx/rails_overlays.png") {
+	tmpl_underlay_railtypes()
+}
+
+
+spriteset(track_overlay_group, "gfx/rails_overlays.png") {
+	tmpl_overlay_railtypes()
+}
+
+
+spriteset(bridge_underlay_group, "gfx/rails_overlays.png") {
+	tmpl_bridges_underlay()
+}
+
+spriteset(tunnel_group, "gfx/tunnel_track_normal.png") {
+	tmpl_tunnel_tracks()
+}
+
+
+item(FEAT_RAILTYPES) {
+	property {
+		// properties
+		label						: "MONO";
+		compatible_railtype_list	: ["VACT", "MONO"];
+		powered_railtype_list		: ["VACT", "MONO"];
+		sort_order					: 37;
+
+		// strings
+		name						: string(STR_MONO_RAIL);
+		toolbar_caption				: string(STR_MONO_RAIL_CONST);
+		menu_text					: string(STR_MONO_RAIL);
+	}
+}
+
+item(FEAT_RAILTYPES) {
+	property {
+		// properties
+		label						: "VACT";
+		sort_order					: 38;
+		compatible_railtype_list	: ["VACT"];
+		powered_railtype_list		: ["VACT"];
+		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_NO_LEVEL_CROSSING);
+		curve_speed_multiplier		: 10;
+		station_graphics			: RAILTYPE_STATION_MONORAIL;
+		construction_cost			: 4000;
+		acceleration_model			: ACC_MODEL_MAGLEV;
+		maintenance_cost			: 64;
+
+		// strings
+		name						: string(STR_VAC_RAIL);
+		toolbar_caption				: string(STR_VAC_RAIL_CONST);
+		menu_text					: string(STR_VAC_RAIL);
+		build_window_caption		: string(STR_BUILD_CAPTION);
+		autoreplace_text			: string(STR_AUTOREPLACE);
+		new_engine_text				: string(STR_NEW_ENGINE);
+	}
+	graphics {
+		track_overlay				: track_overlay_group;
+		underlay					: track_underlay_group;
+		tunnels						: tunnel_group;
+		bridge_surfaces				: bridge_underlay_group;
+		catenary_wire				: wire_group_top;
+		catenary_pylons				: pylons_group_top;
+		gui							: gui_sprites_big;
+	}
+}

@@ -1,0 +1,46 @@
+##grflangid 0x02
+
+STR_GRF_NAME 		:Brianum: Vakuum-Monorail Fahrzeuge
+STR_GRF_DESCRIPTION     :Ein Vakuumtunnelbahn-GRF für OpenTTD. Kombiniert mit Monorail-Technologie ermöglicht Vakuum ein reibungsloses Umfeld in dem Züge in der Lage sind, extrem hohe Geschwindigkeiten zu erreichen.
+
+STR_NAME_TEST_TRAIN	:VacTrain Versuchswagen
+STR_NAME_LOCAL1		:VAC-0001 "Euroliner"
+STR_NAME_LONGDIST1	:VAC-0002 "Freeliner"
+STR_NAME_DOUBLE1	:J-VAC Shinkū-eki Baureihe 40000
+
+STR_NAME_LONGDISTWAGON	:Vakuum-Passagierwagen (1. Klasse)
+STR_NAME_LOCALWAGON 	:Vakuum-Passagierwagen (2. Klasse)
+STR_NAME_DOUBLEWAGON 	:J-VAC-Doppelstockwagen
+STR_NAME_MAILWAGON	:Vakuum-Güterwagen
+
+STR_COMPAT_TEST		:An den VacTrain Versuchswagen können nur Passierwagen und Güterwagen angehängt werden
+STR_COMPAT_VAC1		:An den VAC-0001 "Euroliner" können nur Passagierwagen und Güterwagen angehängt werden
+STR_COMPAT_VAC2		:An den VAC-0002 "Freeliner" können nur Passagierwagen und Güterwagen angehängt werden
+STR_COMPAT_JVAC		:An den J-VAC Shinkū-eki Baureihe 40000-Triebwagen können nur J-VAC-Doppelstockwagen angehängt werden
+STR_COMPAT_JVAC_CAR	:J-VAC-Doppelstockwagen können nur an den J-VAC Shinkū-eki Baureihe 40000-Triebwagen angehängt werden
+STR_COMPAT_MULTI	:Mehrfachtraktion ist nur mit gleichen Triebköpfen möglich
+
+STR_PARAM_RUNNING_COST                                          :Betriebskosten anpassen
+STR_PARAM_RUNNING_COST_DESC                                     :Passt die Betriebskosten der Vakuum-Züge an, z.B. Zwecks Balancing
+STR_PARAM_PURCHASE_COST                                         :Adjust purchase costs
+STR_PARAM_PURCHASE_COST_DESC                                    :Passt die Beschaffungskosten der Vakuum-Züge an, z.B. Zwecks Balancing 
+
+STR_PARAM_COST_AUTOMATICALLY                                    :automatisch (standard)
+STR_PARAM_COST_BY256                                            :1 / 256
+STR_PARAM_COST_BY128                                            :1 / 128
+STR_PARAM_COST_BY64                                             :1 / 64
+STR_PARAM_COST_BY32                                             :1 / 32
+STR_PARAM_COST_BY16                                             :1 / 16
+STR_PARAM_COST_BY8                                              :1 / 8
+STR_PARAM_COST_BY4                                              :1 / 4
+STR_PARAM_COST_BY2                                              :1 / 2
+STR_PARAM_COST_NORMAL                                           :normal
+STR_PARAM_COST_TIMES2                                           :2x
+STR_PARAM_COST_TIMES4                                           :4x
+STR_PARAM_COST_TIMES8                                           :8x
+STR_PARAM_COST_TIMES16                                          :16x
+STR_PARAM_COST_TIMES32                                          :32x
+STR_PARAM_COST_TIMES64                                          :64x
+STR_PARAM_COST_TIMES128                                         :128x
+STR_PARAM_COST_TIMES256                                         :256x
+STR_PARAM_COST_TIMES512                                         :512x

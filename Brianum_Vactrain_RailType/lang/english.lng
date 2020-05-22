@@ -1,0 +1,37 @@
+##grflangid 0x01
+lang: 7F
+STR_GRF_NAME            :Brianum: Vacuum-Monorail Tube
+STR_GRF_DESCRIPTION 	:A Vacuumtubetrain-GRF for OpenTTD. The vacuum, combined with monorail technology, enables a frictionless environment in which trains are able to reach extremely high speeds.
+
+STR_NEW_ENGINE          :New Vacuum Trains
+STR_AUTOREPLACE         :Vacuum train
+STR_BUILD_CAPTION       :Vacuum trains
+STR_VAC_RAIL            :Vacuum Monorail
+STR_VAC_RAIL_CONST		:Vakuum Monorail Construction
+
+STR_MONO_RAIL			:Monorail
+STR_MONO_RAIL_CONST		:Monorail Construction
+
+
+STR_PARAM1_NAME         :Build cost multiplicator
+STR_PARAM1_DESC         :Allows modifications to build costs
+
+STR_PARAM_COST_BY256    :1 / 256
+STR_PARAM_COST_BY128    :1 / 128
+STR_PARAM_COST_BY64     :1 / 64
+STR_PARAM_COST_BY32     :1 / 32
+STR_PARAM_COST_BY16     :1 / 16
+STR_PARAM_COST_BY8      :1 / 8
+STR_PARAM_COST_BY4      :1 / 4
+STR_PARAM_COST_BY2      :1 / 2
+STR_PARAM_COST_NORMAL   :normal
+STR_PARAM_COST_TIMES2   :2x
+STR_PARAM_COST_TIMES4   :4x
+STR_PARAM_COST_TIMES8   :8x
+STR_PARAM_COST_TIMES16  :16x
+STR_PARAM_COST_TIMES32  :32x
+STR_PARAM_COST_TIMES64  :64x
+STR_PARAM_COST_TIMES128 :128x
+STR_PARAM_COST_TIMES256 :256x
+STR_PARAM_COST_TIMES512 :512x
+STR_PARAM_COST_AUTO     :Default

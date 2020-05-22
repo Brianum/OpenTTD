@@ -1,0 +1,7 @@
+##grflangid 0x02
+
+STR_GRF_NAME	:Brianum: 'X2014' & 'Millennium Z2'
+STR_GRF_DESC	:Fügt neue Monorail-Lokomotiven 'X2014' und 'Millennium Z2' dem Spiel hinzu
+STR_NAME_X2014	:'X2014' (Elektrisch)
+STR_NAME_Z2	:'Millennium Z2' (Elektrisch)
+

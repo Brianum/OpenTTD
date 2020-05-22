@@ -1,0 +1,36 @@
+##grflangid 0x02
+
+STR_GRF_NAME            :Brianum: Vakuum-Monorail Tunnelröhre
+STR_GRF_DESCRIPTION     :Ein Vakuumtunnelbahn-GRF für OpenTTD. Kombiniert mit Monorail-Technologie ermöglicht Vakuum ein reibungsloses Umfeld in dem Züge in der Lage sind, extrem hohe Geschwindigkeiten zu erreichen.
+
+STR_NEW_ENGINE          :Neue Vakuum-Fahrzeuge
+STR_AUTOREPLACE         :Vakuumzug
+STR_BUILD_CAPTION       :Vakuum-Fahrzeuge
+STR_VAC_RAIL            :Vakuum-Monorail
+STR_VAC_RAIL_CONST		:Vakuum-Monorailbau
+
+STR_MONO_RAIL           :Monorail
+STR_MONO_RAIL_CONST     :Monorail-Bau
+
+STR_PARAM1_NAME         :Baukostenmultiplikator
+STR_PARAM1_DESC         :Erlaubt die Baukosten für die Vakuum-Röhre anzupassen
+
+STR_PARAM_COST_BY256    :1 / 256
+STR_PARAM_COST_BY128    :1 / 128
+STR_PARAM_COST_BY64     :1 / 64
+STR_PARAM_COST_BY32     :1 / 32
+STR_PARAM_COST_BY16     :1 / 16
+STR_PARAM_COST_BY8      :1 / 8
+STR_PARAM_COST_BY4      :1 / 4
+STR_PARAM_COST_BY2      :1 / 2
+STR_PARAM_COST_NORMAL   :normal
+STR_PARAM_COST_TIMES2   :2x
+STR_PARAM_COST_TIMES4   :4x
+STR_PARAM_COST_TIMES8   :8x
+STR_PARAM_COST_TIMES16  :16x
+STR_PARAM_COST_TIMES32  :32x
+STR_PARAM_COST_TIMES64  :64x
+STR_PARAM_COST_TIMES128 :128x
+STR_PARAM_COST_TIMES256 :256x
+STR_PARAM_COST_TIMES512 :512x
+STR_PARAM_COST_AUTO     :Standard

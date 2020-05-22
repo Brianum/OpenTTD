@@ -1,0 +1,7 @@
+##grflangid 0x01
+lang: 7F
+STR_GRF_NAME	:Brianum: 'X2014' & 'Millennium Z2'
+STR_GRF_DESC	:Adds new locomotives 'X2014' and 'Millennium Z2' to the game
+STR_NAME_X2014	:'X2014' (Electric)
+STR_NAME_Z2	:'Millennium Z2' (Electric)
+

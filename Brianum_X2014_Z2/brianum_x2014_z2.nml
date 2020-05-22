@@ -1,0 +1,100 @@
+grf {
+	grfid			: "BS06";
+	name			: string(STR_GRF_NAME);
+	desc			: string(STR_GRF_DESC);
+	version			: 4;
+	min_compatible_version	: 4;
+}
+
+template tmpl_x2014() {
+	[0, 0, 8, 23, -4, -12, 0]
+	[16, 0, 22, 17, -11, -9, 0]
+	[48, 0, 32, 12, -16, -6, 0]
+	[96, 0, 22, 17, -11, -9, 0]
+}
+
+template tmpl_z2() {
+	[0, 0, 8, 23, -4, -12, 0]
+	[16, 0, 22, 17, -11, -9, 0]
+	[48, 0, 31, 12, -16, -6, 0]
+	[96, 0, 22, 17, -11, -9, 0]
+	[128, 0, 8, 23, -4, -12, 0]
+	[144, 0, 22, 17, -11, -9, 0]
+	[176, 0, 31, 12, -15, -6, 0]
+	[224, 0, 22, 17, -12, -9, 0]
+}
+
+spriteset(x2014_spriteset, "gfx/X2014.png") {
+	tmpl_x2014()
+	tmpl_x2014()
+}
+
+spriteset(z2_spriteset, "gfx/Z2.png") {
+	tmpl_z2()
+}
+
+cargotable {
+	PASS, OIL_
+}
+
+item(FEAT_TRAINS, x2014) {
+	property {
+		sprite_id			: SPRITE_ID_NEW_TRAIN;
+		track_type			: MONO;
+		name				: string(STR_NAME_X2014);
+		climates_available		: bitmask(CLIMATE_TEMPERATE,CLIMATE_ARCTIC,CLIMATE_TROPICAL);
+		introduction_date		: date(2012,1,1);
+		speed				: 377 km/h;
+		power				: 14000 hp;
+		tractive_effort_coefficient	: 0.32;
+		dual_headed			: 0;
+		engine_class			: ENGINE_CLASS_MONORAIL;
+		cargo_capacity			: 0;
+		weight				: 93 tons;
+		loading_speed			: 20;
+		reliability_decay		: 20;
+		model_life			: VEHICLE_NEVER_EXPIRES;
+		vehicle_life			: 22;
+		cost_factor			: 55;
+		running_cost_factor		: 253;
+		running_cost_base		: RUNNING_COST_ELECTRIC;
+	}
+
+	graphics {
+		default			: x2014_spriteset;
+	}
+}
+
+item(FEAT_TRAINS, z2) {
+	property {
+		sprite_id			: SPRITE_ID_NEW_TRAIN;
+		track_type			: MONO;
+		name				: string(STR_NAME_Z2);
+		climates_available		: bitmask(CLIMATE_TEMPERATE,CLIMATE_ARCTIC,CLIMATE_TROPICAL);
+		misc_flags			: bitmask(TRAIN_FLAG_MU);
+		introduction_date		: date(2018,1,1);
+		speed				: 420 km/h;
+		power				: 12000 hp;
+		tractive_effort_coefficient	: 0.32;
+		dual_headed			: 1;
+		engine_class			: ENGINE_CLASS_MONORAIL;
+		cargo_capacity			: 25;
+		cargo_allow_refit		: [PASS];
+		cargo_disallow_refit		: [OIL_];
+		weight				: 88 tons;
+		loading_speed			: 20;
+		reliability_decay		: 20;
+		model_life			: VEHICLE_NEVER_EXPIRES;
+		vehicle_life			: 22;
+		cost_factor			: 66;
+		running_cost_factor		: 255;
+		running_cost_base		: RUNNING_COST_ELECTRIC;
+	}
+
+	graphics {
+		default			: z2_spriteset;
+	}
+}
+
+sort(FEAT_TRAINS, [54, x2014, 55, z2]);
+

@@ -1,0 +1,7 @@
+##grflangid 0x02
+
+STR_GRF_NAME	:Brianum: SH '50' & SH '60'
+STR_GRF_DESC	:Fügt neue Lokomotiven SH '50' und SH '60' dem Spiel hinzu
+STR_NAME_SH50	:SH '50' (Elektrisch)
+STR_NAME_SH60	:SH '60' (Elektrisch)
+

@@ -1,0 +1,9 @@
+##grflangid 0x01
+
+lang: 7F
+
+STR_GRF_NAME	:Brianum: SH '50' & SH '60'
+STR_GRF_DESC	:Adds new locomotives SH '50' and SH '60' to the game
+STR_NAME_SH50	:SH '50' (Electric)
+STR_NAME_SH60	:SH '60' (Electric)
+
